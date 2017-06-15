@@ -4,8 +4,10 @@
 
 const request = require('request');
 
-let getCoordinates = function(callback){
-    request('https://maps.googleapis.com/maps/api/geocode/json?address=montreal', function (error, response, body) {
+let getCoordinates = function(location, callback){
+    const baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+    let locationUrl = baseUrl + location;
+    request(locationUrl, function (error, response, body) {
         if(error){
             console.log(error);
             return callback(error);
