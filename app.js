@@ -10,6 +10,14 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
+hbs.registerHelper("convertPercentage", function(num){
+    return num * 100;
+});
+
+hbs.registerHelper("convertToCelsius", function(num){
+    return ((num - 32) * 0.5556).toFixed(2);
+});
+
 app.get('/', function (req, res) {
     location.getCoordinates("montreal",function (err, location) {
         res.render('home',{location: location});

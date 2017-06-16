@@ -9,24 +9,24 @@
         <div class="col-md-4">
             <p>Today</p>
             <p><strong>{{weatherForecast.currently.summary}}</strong></p>
-            <p>Current Temperature:{{weatherForecast.currently.temperature}}</p>
-            <p>Apparent Temperature:{{weatherForecast.currently.apparentTemperature}}</p>
-            <p>Chance of precipitation: {{weatherForecast.currently.precipProbability}}%</p>
+            <p>Current Temperature: {{convertToCelsius weatherForecast.currently.temperature}}°C</p>
+            <p>Apparent Temperature: {{convertToCelsius weatherForecast.currently.apparentTemperature}}°C</p>
+            <p>Chance of precipitation: {{convertPercentage weatherForecast.currently.precipProbability}}%</p>
 
         </div>
         <div class="col-md-4">
             <p>Tomorrow</p>
             <p><strong>{{weatherForecast.daily.data.[0].summary}}</strong></p>
-            <p>Estimated Minimum Temperature:{{weatherForecast.daily.data.[0].temperatureMin}}</p>
-            <p>Estimated Maximum Temperature:{{weatherForecast.daily.data.[0].temperatureMax}}</p>
-            <p>Chance of precipitation: {{weatherForecast.daily.data.[0].precipProbability}}%</p>
+            <p>Estimated Minimum Temperature: {{convertToCelsius weatherForecast.daily.data.[0].temperatureMin}}°C</p>
+            <p>Estimated Maximum Temperature: {{convertToCelsius weatherForecast.daily.data.[0].temperatureMax}}°C</p>
+            <p>Chance of precipitation: {{convertPercentage weatherForecast.daily.data.[0].precipProbability}}%</p>
         </div>
         <div class="col-md-4">
             <p>Day after tomorrow</p>
             <p><strong>{{weatherForecast.daily.data.[1].summary}}</strong></p>
-            <p>Estimated Minimum Temperature:{{weatherForecast.daily.data.[1].temperatureMin}}</p>
-            <p>Estimated Maximum Temperature:{{weatherForecast.daily.data.[1].temperatureMax}}</p>
-            <p>Chance of precipitation: {{weatherForecast.daily.data.[1].precipProbability}}%</p>
+            <p>Estimated Minimum Temperature: {{convertToCelsius weatherForecast.daily.data.[1].temperatureMin}}°C</p>
+            <p>Estimated Maximum Temperature: {{convertToCelsius weatherForecast.daily.data.[1].temperatureMax}}°C</p>
+            <p>Chance of precipitation: {{convertPercentage weatherForecast.daily.data.[1].precipProbability}}%</p>
         </div>
     </div>
 </div>
