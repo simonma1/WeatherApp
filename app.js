@@ -5,8 +5,10 @@ const   weather = require('./weather/weather'),
         location = require('./location/location');
 
 let app = express();
+app.use(express.static('public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.get('/', function (req, res) {
     location.getCoordinates("montreal",function (err, location) {
