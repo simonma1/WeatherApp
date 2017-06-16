@@ -22,9 +22,10 @@ app.get('/search', function (req, res) {
         console.log(locationObj.results[0].geometry.location.lat);
         let lat = locationObj.results[0].geometry.location.lat;
         let lng = locationObj.results[0].geometry.location.lng;
-        weather.getWeatherData(lat, lng, function(err, currentWeather){
-            //console.log(currentWeather);
-            res.render('weather', {currentWeather: currentWeather});
+        let cityName = locationObj.results[0].address_components[0].long_name;
+        weather.getWeatherData(lat, lng, function(err, weatherForecast){
+            weatherForecast = JSON.parse(weatherForecast);
+            res.render('weather', {weatherForecast: weatherForecast, cityName: cityName});
         });
     });
 });
