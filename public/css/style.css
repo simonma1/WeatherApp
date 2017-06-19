@@ -1,0 +1,32 @@
+.main_container{
+    height:100%;
+}
+
+.board{
+    text-align: center;
+    margin-top:3%;
+}
+
+#location_header{
+    font-size:28px;
+    font-weight: bold;
+}
+
+.forecast_view {
+    border: 1px solid black;
+    padding:3% 0 5% 0;
+    height: 350px;
+
+}
+
+.day{
+    font-size: 2em;
+}
+
+.forecast_content{
+    padding:11% 0;
+}
+
+.current{
+    border-width: 2px;
+}

@@ -1,13 +1,11 @@
-{{> header }}
+<link type="text/css" rel="stylesheet" href="/css/main_page.css">
 
-<h1>Welcome to my weather app</h1>
+<div class="main_content">
+    <h1>Welcome to my weather app</h1>
 
-<form method="get" action="/search">
-    <input type="text" name="location" placeholder="e.g city, postal code, address">
-    <input type="submit">
-</form>
+    <form method="get" action="/search">
+        <input type="text" name="location" placeholder="e.g city, postal code, address">
+        <input type="submit">
+    </form>
+</div>
 
-<p>{{location}}</p>
-
-
-{{> footer }}

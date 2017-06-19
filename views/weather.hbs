@@ -1,32 +1,45 @@
 {{> header }}
 
 
-<div class="container">
-    <div>
+<div class="container main_container">
+    <p id="location_header">
         Weather Forecast for {{cityName}}
-    </div>
-    <div>
-        <div class="col-md-4">
-            <p>Today</p>
-            <p><strong>{{weatherForecast.currently.summary}}</strong></p>
-            <p>Current Temperature: {{convertToCelsius weatherForecast.currently.temperature}}°C</p>
-            <p>Apparent Temperature: {{convertToCelsius weatherForecast.currently.apparentTemperature}}°C</p>
-            <p>Chance of precipitation: {{convertPercentage weatherForecast.currently.precipProbability}}%</p>
+    </p>
+    <div class="board">
+        <div class="col-sm-4 forecast_view current">
+            <div class="day">
+                <p>Today</p>
+            </div>
+            <div class="forecast_content">
+                <p><strong>{{weatherForecast.currently.summary}}</strong></p>
+                <p>Current Temperature: {{convertToCelsius weatherForecast.currently.temperature}}°C</p>
+                <p>Apparent Temperature: {{convertToCelsius weatherForecast.currently.apparentTemperature}}°C</p>
+                <p>Chance of precipitation: {{convertPercentage weatherForecast.currently.precipProbability}}%</p>
+
+            </div>
 
         </div>
-        <div class="col-md-4">
-            <p>Tomorrow</p>
-            <p><strong>{{weatherForecast.daily.data.[0].summary}}</strong></p>
-            <p>Estimated Minimum Temperature: {{convertToCelsius weatherForecast.daily.data.[0].temperatureMin}}°C</p>
-            <p>Estimated Maximum Temperature: {{convertToCelsius weatherForecast.daily.data.[0].temperatureMax}}°C</p>
-            <p>Chance of precipitation: {{convertPercentage weatherForecast.daily.data.[0].precipProbability}}%</p>
+        <div class="col-sm-4 forecast_view">
+            <div class="day">
+                <p>Tomorrow</p>
+            </div>
+            <div class="forecast_content">
+                <p><strong>{{weatherForecast.daily.data.[0].summary}}</strong></p>
+                <p>Minimum of: {{convertToCelsius weatherForecast.daily.data.[0].temperatureMin}}°C</p>
+                <p>Maximum of: {{convertToCelsius weatherForecast.daily.data.[0].temperatureMax}}°C</p>
+                <p>Chance of rain: {{convertPercentage weatherForecast.daily.data.[0].precipProbability}}%</p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <p>Day after tomorrow</p>
-            <p><strong>{{weatherForecast.daily.data.[1].summary}}</strong></p>
-            <p>Estimated Minimum Temperature: {{convertToCelsius weatherForecast.daily.data.[1].temperatureMin}}°C</p>
-            <p>Estimated Maximum Temperature: {{convertToCelsius weatherForecast.daily.data.[1].temperatureMax}}°C</p>
-            <p>Chance of precipitation: {{convertPercentage weatherForecast.daily.data.[1].precipProbability}}%</p>
+        <div class="col-sm-4 forecast_view">
+            <div class="day">
+                <p>Day After</p>
+            </div>
+            <div class="forecast_content">
+                <p><strong>{{weatherForecast.daily.data.[1].summary}}</strong></p>
+                <p>Minimum of: {{convertToCelsius weatherForecast.daily.data.[1].temperatureMin}}°C</p>
+                <p>Maximum of: {{convertToCelsius weatherForecast.daily.data.[1].temperatureMax}}°C</p>
+                <p>Chance of rain: {{convertPercentage weatherForecast.daily.data.[1].precipProbability}}%</p>
+            </div>
         </div>
     </div>
 </div>
