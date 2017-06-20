@@ -5,5 +5,13 @@ body{
 
 .main_content{
     text-align: center;
-    margin-top: 18%;
+    margin-top: 15%;
+    padding:1% 0 4% 0;
+    width:50%;
+    background-color:rgba(211,211,211,0.5);
+}
+
+.location_box{
+    width:50%;
+    margin-right: 10px;
 }
