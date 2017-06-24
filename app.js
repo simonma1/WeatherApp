@@ -1,8 +1,10 @@
+require('dotenv').config();//sets the environment variables using the dotenv package
 const   express     = require('express'),
         hbs  = require('hbs');
 
 const   weather = require('./weather/weather'),
-        location = require('./location/location');
+        location = require('./location/location'),
+        imageSearch = require('./location/image');
 
 let app = express();
 app.use(express.static('public'));
@@ -27,13 +29,18 @@ app.get('/', function (req, res) {
 app.get('/search', function (req, res) {
     location.getCoordinates(req.query.location,function (err, location) {
         let locationObj = JSON.parse(location);
-        console.log(locationObj.results[0].geometry.location.lat);
+
         let lat = locationObj.results[0].geometry.location.lat;
         let lng = locationObj.results[0].geometry.location.lng;
         let cityName = locationObj.results[0].address_components[0].long_name;
+
         weather.getWeatherData(lat, lng, function(err, weatherForecast){
             weatherForecast = JSON.parse(weatherForecast);
-            res.render('weather', {weatherForecast: weatherForecast, cityName: cityName});
+
+            imageSearch.getImage(cityName, function(err, imageResult){
+                console.log(imageResult);
+                res.render('weather', {weatherForecast: weatherForecast, cityName: cityName});
+            });
         });
     });
 });

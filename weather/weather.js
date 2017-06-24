@@ -5,7 +5,7 @@ const request = require('request');
 
 let getWeatherData = function(lat, lng, callback){
     const baseUrl = 'https://api.darksky.net/forecast/';
-    const apiKey = '44f89dbceef00c16bd8804458d6b10af';//Will be changed later on to use env variables
+    const apiKey = process.env.FORECASTIO_API_KEY;
     let fullUrl = baseUrl + apiKey + '/' + lat + ','  + lng;
     request(fullUrl, function (error, response, body) {
         if(error){
