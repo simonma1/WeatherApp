@@ -1,5 +1,8 @@
 .main_container{
     height:100%;
+    background-color:rgba(211,211,211,0.6);
+    padding: 0 2% 3% 2%;
+    margin-top:3%;
 }
 
 .board{
@@ -29,4 +32,8 @@
 
 .current{
     border-width: 2px;
+}
+
+.img_back{
+    background-size: cover;
 }

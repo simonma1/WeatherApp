@@ -38,8 +38,11 @@ app.get('/search', function (req, res) {
             weatherForecast = JSON.parse(weatherForecast);
 
             imageSearch.getImage(cityName, function(err, imageResult){
-                console.log(imageResult);
-                res.render('weather', {weatherForecast: weatherForecast, cityName: cityName});
+                res.render('weather', {
+                    weatherForecast: weatherForecast,
+                    cityName: cityName,
+                    imageUrl: imageResult
+                });
             });
         });
     });

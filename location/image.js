@@ -19,11 +19,13 @@ let getImage = function(cityName, callback){
             console.log(error);
             callback(error);
         }else{
-            callback(undefined, body);
+            imageData = JSON.parse(body);
+            imageUrl = imageData.items[0].link;
+            callback(undefined, imageUrl);
         }
     });
 };
 
 module.exports = {
     getImage
-}
+};
