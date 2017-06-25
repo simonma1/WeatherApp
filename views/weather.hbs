@@ -12,8 +12,8 @@
             </div>
             <div class="forecast_content">
                 <p><strong>{{weatherForecast.currently.summary}}</strong></p>
-                <p>Current Temperature: {{convertToCelsius weatherForecast.currently.temperature}}°C</p>
-                <p>Apparent Temperature: {{convertToCelsius weatherForecast.currently.apparentTemperature}}°C</p>
+                <p>Temperature: {{convertToCelsius weatherForecast.currently.temperature}}°C</p>
+                <p>Feels Like: {{convertToCelsius weatherForecast.currently.apparentTemperature}}°C</p>
                 <p>Chance of precipitation: {{convertPercentage weatherForecast.currently.precipProbability}}%</p>
 
             </div>

@@ -12,8 +12,15 @@ let getCoordinates = function(location, callback){
             console.log(error);
             return callback(error);
         }else{
-            //console.log(body);
-            return callback(undefined, body);
+            let locationObj = JSON.parse(body);
+            console.log(body);
+            //If no results were found, passes the body, which will be an error message
+            // back to the callback as an error to prevent the application from breaking
+            if(locationObj.results.length === 0){
+                console.log("No results found");
+                return callback(locationObj);
+            }
+            return callback(undefined, locationObj);
         }
     });
 };
