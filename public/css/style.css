@@ -43,3 +43,10 @@
 .center{
     line-height: 50px;
 }
+
+@media only screen
+and (max-device-width: 1000px){
+    #location_header{
+        text-align: center;
+    }
+}

@@ -7,11 +7,21 @@ body{
     text-align: center;
     margin-top: 15%;
     padding:1% 0 4% 0;
-    width:50%;
+    width:55%;
     background-color:rgba(211,211,211,0.5);
 }
 
 .location_box{
     width:50%;
     margin-right: 10px;
+}
+
+@media only screen
+and (max-device-width: 1000px){
+
+    .main_content{
+        margin-top:50%;
+        width:75%;
+    }
+
 }
