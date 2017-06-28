@@ -8,8 +8,9 @@ let     baseUrl = "https://www.googleapis.com/customsearch/v1?",
         key = "key=" + process.env.GOOGLE_API_KEY,
         cx = "&cx=" + process.env.SEARCH_CX,//Custom search engine
         searchType = "&searchType=image",//To search for images
+        quality = "&imgSize=huge",
         start = "&start=1";//Index of the first image to receive
-        optionsURL = baseUrl + key + cx + searchType + start;
+        optionsURL = baseUrl + key + cx + searchType + start + quality;
 
 let getImage = function(cityName, callback){
     let imageSearchUrl = optionsURL + "&q=" + cityName;//append the city name to the search
